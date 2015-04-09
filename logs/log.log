@@ -2259,3 +2259,293 @@ spawned uWSGI worker 1 (pid: 7294, cores: 1)
 [pid: 7294|app: 0|req: 30/30] 223.62.188.116 () {36 vars in 694 bytes} [Thu Apr  9 07:04:15 2015] GET /like_comment%3Fcomment_id=2&user_id=1 => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
 [pid: 7294|app: 0|req: 31/31] 223.62.188.116 () {36 vars in 691 bytes} [Thu Apr  9 07:04:29 2015] GET /like_comment?comment_id=2&user_id=1 => generated 7 bytes in 17 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
 [pid: 7294|app: 0|req: 32/32] 223.62.188.116 () {38 vars in 722 bytes} [Thu Apr  9 07:04:36 2015] GET /like_comment?comment_id=2&user_id=1 => generated 11 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 33/33] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:07:58 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 34/34] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:08:05 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 35/35] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:08:08 2015] GET /get_recommend => generated 156 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 36/36] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:08:35 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 37/37] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:10:39 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 38/38] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:10:41 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 39/39] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:10:42 2015] GET /get_recommend => generated 156 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 40/40] 223.62.188.116 () {36 vars in 669 bytes} [Thu Apr  9 07:11:34 2015] GET /get_comment?video_id=aaa => generated 39 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 41/41] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:11:52 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 42/42] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:11:54 2015] GET /get_homecover => generated 101 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 43/43] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:11:54 2015] GET /get_recommend => generated 156 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 44/44] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:13:05 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 45/45] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:13:39 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 46/46] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:13:41 2015] GET /get_recommend => generated 156 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 47/47] 223.62.188.116 () {36 vars in 631 bytes} [Thu Apr  9 07:14:29 2015] GET /get_comment?video_id=aaa => generated 39 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 48/48] 223.62.188.116 () {36 vars in 641 bytes} [Thu Apr  9 07:14:44 2015] GET /get_bser_comment?video_id=aaa => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 49/49] 223.62.188.116 () {36 vars in 641 bytes} [Thu Apr  9 07:14:49 2015] GET /get_best_comment?video_id=aaa => generated 39 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 50/50] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:15:11 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7294|app: 0|req: 51/51] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:15:44 2015] GET /get_recommend => generated 156 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+Thu Apr  9 07:16:44 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Thu Apr  9 07:16:45 2015] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 08 April 2015 06:50:20
+os: Linux-3.14.35-28.38.amzn1.x86_64 #1 SMP Wed Mar 11 22:50:37 UTC 2015
+nodename: ip-172-31-14-38
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ec2-user/projecty
+writing pidfile to /home/ec2-user/projecty/mypid.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ec2-user/projecty
+your processes number limit is 30002
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ec2-user/projecty/uwsgi.sock fd 3
+Python version: 2.7.9 (default, Mar  4 2015, 20:43:00)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-16)]
+Set PythonHome to /home/ec2-user/projecty/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xb46480
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xb46480 pid: 7347 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7347)
+spawned uWSGI worker 1 (pid: 7350, cores: 1)
+[pid: 7350|app: 0|req: 1/1] 223.62.188.116 () {38 vars in 672 bytes} [Thu Apr  9 07:16:49 2015] GET /get_best_comment?video_id=aaa => generated 39 bytes in 30 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 7350|app: 0|req: 2/2] 223.62.188.116 () {38 vars in 672 bytes} [Thu Apr  9 07:16:51 2015] GET /get_best_comment?video_id=aaa => generated 39 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+aaa
+[pid: 7350|app: 0|req: 3/3] 223.62.188.116 () {36 vars in 631 bytes} [Thu Apr  9 07:16:56 2015] GET /get_comment?video_id=aaa => generated 40 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+aaa
+[pid: 7350|app: 0|req: 4/4] 223.62.188.116 () {36 vars in 631 bytes} [Thu Apr  9 07:16:57 2015] GET /get_comment?video_id=aaa => generated 40 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+aaa
+[pid: 7350|app: 0|req: 5/5] 223.62.188.116 () {36 vars in 631 bytes} [Thu Apr  9 07:17:01 2015] GET /get_comment?video_id=aaa => generated 40 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+dfdsf
+[pid: 7350|app: 0|req: 6/6] 223.62.188.116 () {36 vars in 635 bytes} [Thu Apr  9 07:17:02 2015] GET /get_comment?video_id=dfdsf => generated 40 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+Thu Apr  9 07:17:57 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Thu Apr  9 07:17:57 2015] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 08 April 2015 06:50:20
+os: Linux-3.14.35-28.38.amzn1.x86_64 #1 SMP Wed Mar 11 22:50:37 UTC 2015
+nodename: ip-172-31-14-38
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ec2-user/projecty
+writing pidfile to /home/ec2-user/projecty/mypid.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ec2-user/projecty
+your processes number limit is 30002
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ec2-user/projecty/uwsgi.sock fd 3
+Python version: 2.7.9 (default, Mar  4 2015, 20:43:00)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-16)]
+Set PythonHome to /home/ec2-user/projecty/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1f1b480
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1f1b480 pid: 7359 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7359)
+spawned uWSGI worker 1 (pid: 7362, cores: 1)
+[pid: 7362|app: 0|req: 1/1] 223.62.188.116 () {38 vars in 722 bytes} [Thu Apr  9 07:18:00 2015] GET /like_comment?comment_id=2&user_id=1 => generated 11 bytes in 40 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+dfdsf
+<type 'unicode'>
+[]
+[pid: 7362|app: 0|req: 2/2] 223.62.188.116 () {38 vars in 666 bytes} [Thu Apr  9 07:18:13 2015] GET /get_comment?video_id=dfdsf => generated 41 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 3/3] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:19:06 2015] GET /get_homecover => generated 101 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 4/4] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:19:12 2015] GET /get_ddottylog => generated 305 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 5/5] 166.104.139.238 () {34 vars in 547 bytes} [Thu Apr  9 07:19:21 2015] GET /get_favorite_videolist?user_id=1 => generated 102 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 6/6] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:19:25 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 7/7] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:19:25 2015] GET /get_recommend => generated 156 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+dfdsf
+<type 'unicode'>
+[]
+[pid: 7362|app: 0|req: 8/8] 223.62.188.116 () {36 vars in 635 bytes} [Thu Apr  9 07:19:52 2015] GET /get_comment?video_id=dfdsf => generated 41 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+aaa
+<type 'unicode'>
+[]
+[pid: 7362|app: 0|req: 9/9] 223.62.188.116 () {36 vars in 631 bytes} [Thu Apr  9 07:19:53 2015] GET /get_comment?video_id=aaa => generated 41 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 10/10] 223.62.188.116 () {36 vars in 584 bytes} [Thu Apr  9 07:19:55 2015] GET / => generated 140 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 11/11] 223.62.188.116 () {36 vars in 602 bytes} [Thu Apr  9 07:20:00 2015] GET /ddottylog => generated 650 bytes in 13 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+/static/ddottylog/3.png
+[pid: 7362|app: 0|req: 12/12] 223.62.188.116 () {44 vars in 866 bytes} [Thu Apr  9 07:20:37 2015] POST /upload => generated 7 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 13/13] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:21:26 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 14/14] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:21:29 2015] GET /get_ddottylog => generated 484 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 15/15] 166.104.139.238 () {32 vars in 473 bytes} [Thu Apr  9 07:21:29 2015] GET /static/ddottylog/3.png => generated 37953 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 7 headers in 274 bytes (0 switches on core 0)
+[pid: 7362|app: 0|req: 16/16] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:21:39 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 17/17] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:21:39 2015] GET /get_recommend => generated 156 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7362|app: 0|req: 18/18] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:22:32 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+Thu Apr  9 07:24:37 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Thu Apr  9 07:24:37 2015] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 08 April 2015 06:50:20
+os: Linux-3.14.35-28.38.amzn1.x86_64 #1 SMP Wed Mar 11 22:50:37 UTC 2015
+nodename: ip-172-31-14-38
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ec2-user/projecty
+writing pidfile to /home/ec2-user/projecty/mypid.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ec2-user/projecty
+your processes number limit is 30002
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ec2-user/projecty/uwsgi.sock fd 3
+Python version: 2.7.9 (default, Mar  4 2015, 20:43:00)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-16)]
+Set PythonHome to /home/ec2-user/projecty/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1829480
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1829480 pid: 7398 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7398)
+spawned uWSGI worker 1 (pid: 7401, cores: 1)
+[pid: 7401|app: 0|req: 1/1] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:24:51 2015] GET /get_homecover => generated 101 bytes in 26 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7401|app: 0|req: 2/2] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:24:55 2015] GET /get_recommend => generated 156 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+aaa
+<type 'unicode'>
+[]
+[pid: 7401|app: 0|req: 3/3] 223.62.188.116 () {36 vars in 631 bytes} [Thu Apr  9 07:24:57 2015] GET /get_comment?video_id=aaa => generated 41 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 7401|app: 0|req: 4/4] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:25:46 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7401|app: 0|req: 5/5] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:25:50 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7401|app: 0|req: 6/6] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:25:50 2015] GET /get_recommend => generated 156 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+Thu Apr  9 07:26:01 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Thu Apr  9 07:26:01 2015] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 08 April 2015 06:50:20
+os: Linux-3.14.35-28.38.amzn1.x86_64 #1 SMP Wed Mar 11 22:50:37 UTC 2015
+nodename: ip-172-31-14-38
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ec2-user/projecty
+writing pidfile to /home/ec2-user/projecty/mypid.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ec2-user/projecty
+your processes number limit is 30002
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ec2-user/projecty/uwsgi.sock fd 3
+Python version: 2.7.9 (default, Mar  4 2015, 20:43:00)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-16)]
+Set PythonHome to /home/ec2-user/projecty/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x258f480
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x258f480 pid: 7409 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7409)
+spawned uWSGI worker 1 (pid: 7412, cores: 1)
+[pid: 7412|app: 0|req: 1/1] 223.62.188.116 () {36 vars in 648 bytes} [Thu Apr  9 07:26:28 2015] GET /get_recommend => generated 156 bytes in 29 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7412|app: 0|req: 2/2] 223.62.188.116 () {36 vars in 648 bytes} [Thu Apr  9 07:26:37 2015] GET /get_homecover => generated 101 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+aaa
+<type 'unicode'>
+[]
+[pid: 7412|app: 0|req: 3/3] 223.62.188.116 () {38 vars in 662 bytes} [Thu Apr  9 07:26:49 2015] GET /get_comment?video_id=aaa => generated 39 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+aaa
+<type 'unicode'>
+[]
+[pid: 7412|app: 0|req: 4/4] 223.62.188.116 () {38 vars in 662 bytes} [Thu Apr  9 07:26:50 2015] GET /get_comment?video_id=aaa => generated 39 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+aaa
+<type 'unicode'>
+[]
+[pid: 7412|app: 0|req: 5/5] 223.62.188.116 () {38 vars in 662 bytes} [Thu Apr  9 07:26:51 2015] GET /get_comment?video_id=aaa => generated 39 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+Thu Apr  9 07:27:01 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Thu Apr  9 07:27:01 2015] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 08 April 2015 06:50:20
+os: Linux-3.14.35-28.38.amzn1.x86_64 #1 SMP Wed Mar 11 22:50:37 UTC 2015
+nodename: ip-172-31-14-38
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ec2-user/projecty
+writing pidfile to /home/ec2-user/projecty/mypid.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ec2-user/projecty
+your processes number limit is 30002
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ec2-user/projecty/uwsgi.sock fd 3
+Python version: 2.7.9 (default, Mar  4 2015, 20:43:00)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-16)]
+Set PythonHome to /home/ec2-user/projecty/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1da9480
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1da9480 pid: 7419 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7419)
+spawned uWSGI worker 1 (pid: 7422, cores: 1)
+aaa
+<type 'unicode'>
+[]
+[pid: 7422|app: 0|req: 1/1] 223.62.188.116 () {38 vars in 662 bytes} [Thu Apr  9 07:27:02 2015] GET /get_comment?video_id=aaa => generated 39 bytes in 31 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+aaa
+<type 'unicode'>
+[]
+[pid: 7422|app: 0|req: 2/2] 223.62.188.116 () {38 vars in 662 bytes} [Thu Apr  9 07:27:03 2015] GET /get_comment?video_id=aaa => generated 39 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+aaa
+<type 'unicode'>
+[]
+[pid: 7422|app: 0|req: 3/3] 223.62.188.116 () {38 vars in 662 bytes} [Thu Apr  9 07:27:04 2015] GET /get_comment?video_id=aaa => generated 39 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 7422|app: 0|req: 4/4] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:28:32 2015] GET /get_homecover => generated 101 bytes in 14 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7422|app: 0|req: 5/5] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:28:33 2015] GET /get_recommend => generated 156 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+aaa
+<type 'unicode'>
+[]
+[pid: 7422|app: 0|req: 6/6] 223.62.188.116 () {38 vars in 662 bytes} [Thu Apr  9 07:29:16 2015] GET /get_comment?video_id=aaa => generated 39 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+Thu Apr  9 07:29:43 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Thu Apr  9 07:29:43 2015] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 08 April 2015 06:50:20
+os: Linux-3.14.35-28.38.amzn1.x86_64 #1 SMP Wed Mar 11 22:50:37 UTC 2015
+nodename: ip-172-31-14-38
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ec2-user/projecty
+writing pidfile to /home/ec2-user/projecty/mypid.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ec2-user/projecty
+your processes number limit is 30002
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ec2-user/projecty/uwsgi.sock fd 3
+Python version: 2.7.9 (default, Mar  4 2015, 20:43:00)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-16)]
+Set PythonHome to /home/ec2-user/projecty/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xef2480
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xef2480 pid: 7431 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7431)
+spawned uWSGI worker 1 (pid: 7434, cores: 1)
+[pid: 7434|app: 0|req: 1/1] 223.62.188.116 () {38 vars in 662 bytes} [Thu Apr  9 07:29:58 2015] GET /get_comment?video_id=aaa => generated 629 bytes in 26 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7434|app: 0|req: 2/2] 223.62.188.116 () {36 vars in 641 bytes} [Thu Apr  9 07:30:09 2015] GET /get_best_comment?video_id=aaa => generated 629 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7434|app: 0|req: 3/3] 223.62.188.116 () {36 vars in 641 bytes} [Thu Apr  9 07:30:11 2015] GET /get_best_comment?video_id=aaa => generated 629 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7434|app: 0|req: 4/4] 166.104.139.238 () {32 vars in 455 bytes} [Thu Apr  9 07:30:40 2015] GET /get_homecover => generated 101 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7434|app: 0|req: 5/5] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:30:43 2015] GET /get_homecover => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 7434|app: 0|req: 6/6] 166.104.139.238 () {34 vars in 510 bytes} [Thu Apr  9 07:30:43 2015] GET /get_recommend => generated 156 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
