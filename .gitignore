@@ -1,0 +1,6 @@
+*pyc
+venv
+mypid.pid
+start.sh
+uwsgi.ini
+uwsgi.sock
