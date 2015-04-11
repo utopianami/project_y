@@ -97,11 +97,11 @@ def user_update():
 def write_comment():
 
     try:
-        user_id = request.form['user_id']
-        video_id = request.form['video_id']
-        comment = request.form['comment']
+        user_id = request.args.get['user_id']
+        video_id = request.args.get['video_id']
+        comment = request.args.get['comment']
 
-        comment = comment(user_id ,video_id, comment)
+        comment = Comment(user_id ,video_id, comment)
         db_session.add(comment)
         db_session.commit()
 
