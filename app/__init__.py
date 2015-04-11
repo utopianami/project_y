@@ -97,10 +97,9 @@ def user_update():
 def write_comment():
 
     try:
-        json = request.json
-        user_id = json['user_id']
-        video_id = json['video_id']
-        comment = json['comment']
+        user_id = request.form['user_id']
+        video_id = request.form['video_id']
+        comment = request.form['comment']
 
         comment = comment(user_id ,video_id, comment)
         db_session.add(comment)
