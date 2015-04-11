@@ -69,9 +69,9 @@ def sign_up():
             db_session.add(user)
             db_session.commit()
 
-        user_id = db_session.query(User).filter(User.googleId == googleId).first().id
+        user = db_session.query(User).filter(User.googleId == googleId).first()
 
-        return jsonify( success = True, user_id=user_id)
+        return jsonify( success = True, user_id=user.id, user_name = user.name, user_googleId= user.googleId)
     except:
         return jsonify( success = False, user_id=0)
 

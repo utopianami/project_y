@@ -105,6 +105,3 @@ class Home_cover(Base):
 
     def __init__(self, video_id):
         self.video_id = video_id
-
-# class Dotty_log(Base):
-#     __tablename__ = 'dotty_log'
