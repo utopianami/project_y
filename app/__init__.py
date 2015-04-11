@@ -190,7 +190,7 @@ def add_favorite_video():
 def add_favorite_playlist():
     try:
         user_id = request.args.get('user_id')
-        playlist_id = request.args.get('playlist_id')
+        playlist_id = request.args.get('video_id')
 
         count = db_session.query(Favorite_playlist).filter(Favorite_playlist.user_id == user_id,
                                                    Favorite_playlist.playlist_id ==playlist_id).count()
