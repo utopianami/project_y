@@ -97,9 +97,9 @@ def user_update():
 def write_comment():
 
     try:
-        user_id = request.args.get['user_id']
-        video_id = request.args.get['video_id']
-        comment = request.args.get['comment']
+        user_id = request.args.get('user_id')
+        video_id = request.args.get('video_id')
+        comment = request.args.get('comment')
 
         comment = Comment(user_id ,video_id, comment)
         db_session.add(comment)
