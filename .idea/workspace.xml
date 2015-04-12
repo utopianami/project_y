@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e00b8284-0d37-4b1d-8279-266e81057007" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/db.py" afterPath="$PROJECT_DIR$/app/db.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="project_y.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,8 +88,8 @@
       <file leaf-file-name="db.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1985294" vertical-offset="0" max-vertical-offset="680">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2867647" vertical-offset="0" max-vertical-offset="680">
+              <caret line="13" column="53" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -923,8 +922,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/db.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1985294" vertical-offset="0" max-vertical-offset="680">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2867647" vertical-offset="0" max-vertical-offset="680">
+          <caret line="13" column="53" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
