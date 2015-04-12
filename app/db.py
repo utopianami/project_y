@@ -9,7 +9,7 @@ import logging
 # logging.getLogger('sqlalchemy.pool').setLevel(logging.DEBUG)
 
  #'mysql://id:password@localhost/database_name',
-engine = create_engine('mysql://dbuser:dkagh123@localhost/projecty', convert_unicode=True)
+engine = create_engine('mysql://dbuser:dkagh123@localhost/projecty', convert_unicode=True, pool_recycle=3600)
 # engine = create_engine('mysql://dbuser:dkagh123@localhost/projecty', convert_unicode=True,
 #                        pool_recycle=500, pool_size=250, max_overflow=20, echo=False, echo_pool=True)
 db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
