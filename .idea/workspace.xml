@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e00b8284-0d37-4b1d-8279-266e81057007" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/__init__.py" afterPath="$PROJECT_DIR$/app/__init__.py" />
-    </list>
+    <list default="true" id="e00b8284-0d37-4b1d-8279-266e81057007" name="Default" comment="" />
     <ignored path="project_y.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -64,8 +62,8 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6993569" vertical-offset="2415" max-vertical-offset="5085">
-              <caret line="196" column="42" selection-start-line="196" selection-start-column="42" selection-end-line="196" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.5305466" vertical-offset="2415" max-vertical-offset="5085">
+              <caret line="189" column="97" selection-start-line="189" selection-start-column="97" selection-end-line="189" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -938,8 +936,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6993569" vertical-offset="2415" max-vertical-offset="5085">
-          <caret line="196" column="42" selection-start-line="196" selection-start-column="42" selection-end-line="196" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.5305466" vertical-offset="2415" max-vertical-offset="5085">
+          <caret line="189" column="97" selection-start-line="189" selection-start-column="97" selection-end-line="189" selection-end-column="97" />
           <folding />
         </state>
       </provider>
