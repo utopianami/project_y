@@ -162,6 +162,42 @@ def like_comment():
     except:
         return "fail"
 
+#Write
+@app.route('/check_favorite_video', methods = ['GET'])
+def check_favorite_video():
+
+    try:
+        user_id = request.args.get('user_id')
+        video_id = request.args.get('video_id')
+
+        video = db_session.query(Favorite_video).filter(Favorite_video.user_id == user_id,
+                                                   Favorite_video.video_id ==video_id)
+        count = video.count()
+        if count == 0:
+            return jsonify( result = False)
+        else:
+            return jsonify( result = True)
+    except:
+        return "fail"
+
+#Write
+@app.route('/check_favorite_playlist', methods = ['GET'])
+def check_favorite_playlist():
+    try:
+        user_id = request.args.get('user_id')
+        playlist_id = request.args.get('video_id')
+
+        playlist = db_session.query(Favorite_playlist).filter(Favorite_playlist.user_id == user_id,
+                                                   Favorite_playlist.playlist_id ==playlist_id)
+        count = playlist.count()
+
+        if count == 0:
+            return jsonify( result = False)
+        else:
+            return jsonify( result = True)
+    except:
+        return "fail"
+
 
 
 #Write
