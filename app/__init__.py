@@ -162,22 +162,28 @@ def like_comment():
     except:
         return "fail"
 
+
+
 #Write
 @app.route('/add_favorite_video', methods = ['GET'])
 def add_favorite_video():
+
     try:
         user_id = request.args.get('user_id')
         video_id = request.args.get('video_id')
 
-        count = db_session.query(Favorite_video).filter(Favorite_video.user_id == user_id,
-                                                   Favorite_video.video_id ==video_id).count()
-
+        video = db_session.query(Favorite_video).filter(Favorite_video.user_id == user_id,
+                                                   Favorite_video.video_id ==video_id)
+        count = video.count()
         if count == 0:
             i = Favorite_video(user_id ,video_id)
             db_session.add(i)
             db_session.commit()
             return "success"
         else:
+            db_session.query(Favorite_video).filter(Favorite_video.user_id == user_id,
+                                                   Favorite_video.video_id ==video_id).delete()
+            db_session.commit()
             return "duplication"
 
         return "success"
@@ -191,14 +197,19 @@ def add_favorite_playlist():
         user_id = request.args.get('user_id')
         playlist_id = request.args.get('video_id')
 
-        count = db_session.query(Favorite_playlist).filter(Favorite_playlist.user_id == user_id,
-                                                   Favorite_playlist.playlist_id ==playlist_id).count()
+        playlist = db_session.query(Favorite_playlist).filter(Favorite_playlist.user_id == user_id,
+                                                   Favorite_playlist.playlist_id ==playlist_id)
+        count = playlist.count()
+
         if count == 0:
             i = Favorite_playlist(user_id, playlist_id)
             db_session.add(i)
             db_session.commit()
             return "success"
         else:
+            db_session.query(Favorite_playlist).filter(Favorite_playlist.user_id == user_id,
+                                                   Favorite_playlist.playlist_id ==playlist_id).delete()
+            db_session.commit()
             return "duplication"
 
     except:
