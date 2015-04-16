@@ -1,10 +1,13 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.pool import NullPool
 
+import logging
 
-engine = create_engine('mysql://dbuser:dkagh123@localhost/projecty', convert_unicode=True,
-                       pool_recycle=500, pool_size=201, max_overflow=20, echo=False, echo_pool=True)
+logging.basicConfig()
+logging.getLogger('sqlalchemy.pool').setLevel(logging.DEBUG)
+engine = create_engine('mysql://dbuser:dkagh123@localhost/projecty', convert_unicode=True, poolclass=NullPool)
 
 db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
  
