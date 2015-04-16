@@ -3,10 +3,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.pool import NullPool
 
-import logging
 
-logging.basicConfig()
-logging.getLogger('sqlalchemy.pool').setLevel(logging.DEBUG)
 engine = create_engine('mysql://dbuser:dkagh123@localhost/projecty', convert_unicode=True, poolclass=NullPool)
 
 db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
