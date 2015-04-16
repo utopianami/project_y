@@ -5,6 +5,7 @@ from sqlalchemy.pool import NullPool
 
 
 engine = create_engine('mysql://dbuser:dkagh123@localhost/projecty', convert_unicode=True, poolclass=NullPool)
+
 db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
  
 Base = declarative_base()
