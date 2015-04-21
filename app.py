@@ -3,7 +3,8 @@
 
 from app import app, init_db
 
-#df
+#dfdfdf
+#fd
 
 if __name__ == '__main__':
     init_db()
