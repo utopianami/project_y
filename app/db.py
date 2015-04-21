@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.pool import NullPool
 
 
-engine = create_engine('mysql://dbuser:dkagh123@localhost/projecty', convert_unicode=True, poolclass=NullPool,pool_size=1)
+engine = create_engine('mysql://dbuser:dkagh123@localhost/projecty', convert_unicode=True, poolclass=NullPool)
 
 db_session = scoped_session(sessionmaker(expire_on_commit=False, autocommit=False, autoflush=False, bind=engine))
 
