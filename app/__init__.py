@@ -93,25 +93,6 @@ def user_update():
 
 
 #Write
-#댓글작성
-@app.route('/write_comment', methods = ['POST'])
-def write_comment():
-
-    try:
-        user_id = request.args.get('user_id')
-        video_id = request.args.get('video_id')
-        comment = request.args.get('comment')
-
-        comment = Comment(user_id ,video_id, comment)
-        db.session.add(comment)
-        db.session.commit()
-
-        return "success"
-
-    except:
-        return "fail"
-
-#Write
 @app.route('/check_favorite_video', methods = ['GET'])
 def check_favorite_video():
 
@@ -236,6 +217,7 @@ def send_favorite_playlist():
 #Send
 @app.route('/get_homecover', methods = ['GET'])
 def send_home_cover():
+
     try:
         cover_list = db.session.query(Home_cover).order_by("id desc").first().video_id
 
