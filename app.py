@@ -1,11 +1,8 @@
 
 
 
-from app import app, init_db
-
-#dfdfdf
-#fd
+from app import app, db
 
 if __name__ == '__main__':
-    init_db()
+    db.create_all()
     app.run(host='0.0.0.0')
