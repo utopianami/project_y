@@ -15,8 +15,14 @@ db = SQLAlchemy(app)
 from app.models import *
 from app.upload import upload
 
+@app.route('/')
+def hello_world():
 
-
+    try:
+        count = db.session.query(User).count()
+        return jsonify( success = True, member = count)
+    except:
+        return jsonify( success = False, member = 0)
 
 
 
@@ -52,11 +58,7 @@ def upload_file():
     except:
         return "fail"
 
-@app.route('/')
-def hello_world():
-    lista= [1,2,3,4,5]
-    a = {1:3,4:6,"ㅁ":1234}
-    return jsonify( success = True, data = lista, test = a)
+
 
 #Write
 @app.route('/signup', methods = ['GET'])
