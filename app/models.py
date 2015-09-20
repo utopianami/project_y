@@ -76,6 +76,10 @@ class Home_cover(db.Model):
 
     id = Column(Integer, autoincrement=True, primary_key=True)
     video_id = Column(String(255))
+    video_name = "dfsdfdf"
+    video_date="1900-3-4"
 
     def __init__(self, video_id):
         self.video_id = video_id
+
+

@@ -3,6 +3,9 @@ from flask import jsonify, render_template
 from flask import Flask, request
 from flask import Flask, render_template, jsonify, session
 from flask.ext.sqlalchemy import SQLAlchemy
+import urllib2
+import json
+import urllib2
 
 
 app = Flask(__name__)
@@ -40,6 +43,9 @@ def get_ddottylog():
 @app.route('/ddottylog')
 def ddottylog():
     return render_template('ddottylog.html')
+@app.route('/feature')
+def feature():
+    return render_template('feature.html')
 
 
 @app.route('/upload', methods=['POST'])
@@ -268,5 +274,56 @@ def set_video():
 
 
 
+@app.route('/get_ad', methods=['GET'])
+def get_ad():
+    url = 'https://api.buzzad.io/api/v1/list?unit_id=189665253897479'
 
+    data = json.load(urllib2.urlopen(url))
+
+    if data['code'] != 200:
+        return 'error'
+
+    ad_list = data['ads']
+    for ad in ad_list:
+        reward = int(ad['revenue'] * 0.5)
+
+
+        if ad['revenue'] > 150 and ad['revenue_type'] == 'cpi':
+            reward = 100
+
+        print reward
+
+    return jsonify(ad_list[0])
+
+
+@app.route('/upload_homecover', methods=['POST'])
+def upload_homecover():
+    try:
+        id = request.form['content']
+        print id
+        video = Home_cover(id)
+
+        db.session.add(video)
+        db.session.commit()
+
+        return "success"
+
+    except:
+        return "false"
+
+@app.route('/upload_recommendcover', methods=['POST'])
+def upload_recommedcover():
+    try:
+
+        id = request.form['content']
+        print id
+        video = Recommend_cover(id)
+
+        db.session.add(video)
+        db.session.commit()
+
+        return "success"
+
+    except:
+        return "false"
 
