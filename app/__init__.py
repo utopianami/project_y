@@ -299,12 +299,20 @@ def get_ad():
 @app.route('/upload_homecover', methods=['POST'])
 def upload_homecover():
     try:
-        id = request.form['content']
-        print id
-        video = Home_cover(id)
+        code = int(request.form['code'])
+        video1 = request.form['video1'].split('v=')[1]
+        video2 = request.form['video2'].split('v=')[1]
+        video3 = request.form['video3'].split('v=')[1]
+        video4 = request.form['video4'].split('v=')[1]
+        video5 = request.form['video5'].split('v=')[1]
 
-        db.session.add(video)
-        db.session.commit()
+        if code == 378:
+            video_str = video1+','+video2+','+video3+','+video4+','+video5
+            video = Home_cover(video_str)
+            db.session.add(video)
+            db.session.commit()
+        else:
+            return "false"
 
         return "success"
 
@@ -314,16 +322,22 @@ def upload_homecover():
 @app.route('/upload_recommendcover', methods=['POST'])
 def upload_recommedcover():
     try:
+        code = int(request.form['code'])
+        video1 = request.form['video1'].split('v=')[1]
+        video2 = request.form['video2'].split('v=')[1]
+        video3 = request.form['video3'].split('v=')[1]
+        video4 = request.form['video4'].split('v=')[1]
+        video5 = request.form['video5'].split('v=')[1]
 
-        id = request.form['content']
-        print id
-        video = Recommend_cover(id)
-
-        db.session.add(video)
-        db.session.commit()
+        if code == 378:
+            video_str = video1+','+video2+','+video3+','+video4+','+video5
+            video = Recommend_cover(video_str)
+            db.session.add(video)
+            db.session.commit()
+        else:
+            return "false"
 
         return "success"
 
     except:
         return "false"
-
