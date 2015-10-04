@@ -1,4 +1,5 @@
-#-*- coding: utf-8 -*-
+
+from flask import Blueprint, request, render_template, session, redirect, url_for
 from flask import jsonify, render_template
 from flask import Flask, request
 from flask import Flask, render_template, jsonify, session
@@ -6,53 +7,47 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import urllib2
 import json
 import urllib2
-
-
-app = Flask(__name__)
-app.config.from_object('config')
-
-db = SQLAlchemy(app)
-
-
-
 from app.models import *
 from app.upload import upload
 
-from app.hongbangjang.views import mod as hongbangjangModule
-app.register_blueprint(hongbangjangModule)
+from app import db, app
 
 
-@app.route('/')
+
+mod = Blueprint('hongbangjang', __name__, url_prefix='/hongbangjang')
+
+
+@mod.route('/')
 def hello_world():
 
     try:
-        count = db.session.query(User).count()
+        count = db.session.query(H_User).count()
         return jsonify( success = True, member = count)
     except:
         return jsonify( success = False, member = 0)
 
 
 
-@app.route('/get_ddottylog')
+@mod.route('/get_ddottylog')
 def get_ddottylog():
 
     try:
-        DDotty_query = db.session.query(DDotty).order_by("id desc")
+        DDotty_query = db.session.query(H_DDotty).order_by("id desc")
         entries = [dict(date=log.time, img_path=log.img, content=log.content) for log in DDotty_query]
         return jsonify(success = True, result = entries)
     except:
         return jsonify(success = False, result = "")
 
 
-@app.route('/ddottylog')
+@mod.route('/ddottylog')
 def ddottylog():
     return render_template('ddottylog.html')
-@app.route('/feature')
+@mod.route('/feature')
 def feature():
     return render_template('feature.html')
 
 
-@app.route('/upload', methods=['POST'])
+@mod.route('/upload', methods=['POST'])
 def upload_file():
     file = request.files['file']
     content = request.form['content']
@@ -60,7 +55,7 @@ def upload_file():
     try:
         img_path = upload(file)
         print img_path
-        log = DDotty(img_path, content)
+        log = H_DDotty(img_path, content)
         db.session.add(log)
         db.session.commit()
 
@@ -71,30 +66,30 @@ def upload_file():
 
 
 #Write
-@app.route('/signup', methods = ['GET'])
+@mod.route('/signup', methods = ['GET'])
 def sign_up():
     try:
         user_name = request.args.get('user_name')
         googleId = request.args.get('google_id')
-        count = db.session.query(User).filter(User.googleId ==googleId).count()
+        count = db.session.query(H_User).filter(H_User.googleId ==googleId).count()
         if count == 0:
-            user = User(user_name, googleId)
+            user = H_User(user_name, googleId)
             db.session.add(user)
             db.session.commit()
 
-        user = db.session.query(User).filter(User.googleId == googleId).first()
+        user = db.session.query(H_User).filter(H_User.googleId == googleId).first()
 
         return jsonify( success = True, user_id=user.id, user_name = user.name, user_googleId= user.googleId)
     except:
         return jsonify( success = False, user_id=0)
 
-@app.route('/user_update', methods = ['GET'])
+@mod.route('/user_update', methods = ['GET'])
 def user_update():
     try:
         id = request.args.get('user_id')
         name = request.args.get('name')
 
-        user = db.session.query(User).filter(User.id==id).first()
+        user = db.session.query(H_User).filter(H_User.id==id).first()
         user.name = name
 
         db.session.commit()
@@ -105,15 +100,15 @@ def user_update():
 
 
 #Write
-@app.route('/check_favorite_video', methods = ['GET'])
+@mod.route('/check_favorite_video', methods = ['GET'])
 def check_favorite_video():
 
     try:
         user_id = request.args.get('user_id')
         video_id = request.args.get('video_id')
 
-        video = db.session.query(Favorite_video).filter(Favorite_video.user_id == user_id,
-                                                   Favorite_video.video_id ==video_id)
+        video = db.session.query(H_Favorite_video).filter(H_Favorite_video.user_id == user_id,
+                                                   H_Favorite_video.video_id ==video_id)
         count = video.count()
         if count == 0:
             return jsonify( result = False)
@@ -123,14 +118,14 @@ def check_favorite_video():
         return "fail"
 
 #Write
-@app.route('/check_favorite_playlist', methods = ['GET'])
+@mod.route('/check_favorite_playlist', methods = ['GET'])
 def check_favorite_playlist():
     try:
         user_id = request.args.get('user_id')
         playlist_id = request.args.get('video_id')
 
-        playlist = db.session.query(Favorite_playlist).filter(Favorite_playlist.user_id == user_id,
-                                                   Favorite_playlist.playlist_id ==playlist_id)
+        playlist = db.session.query(H_Favorite_playlist).filter(H_Favorite_playlist.user_id == user_id,
+                                                   H_Favorite_playlist.playlist_id ==playlist_id)
         count = playlist.count()
 
         if count == 0:
@@ -143,24 +138,24 @@ def check_favorite_playlist():
 
 
 #Write
-@app.route('/add_favorite_video', methods = ['GET'])
+@mod.route('/add_favorite_video', methods = ['GET'])
 def add_favorite_video():
 
     try:
         user_id = request.args.get('user_id')
         video_id = request.args.get('video_id')
 
-        video = db.session.query(Favorite_video).filter(Favorite_video.user_id == user_id,
-                                                   Favorite_video.video_id ==video_id)
+        video = db.session.query(H_Favorite_video).filter(H_Favorite_video.user_id == user_id,
+                                                   H_Favorite_video.video_id ==video_id)
         count = video.count()
         if count == 0:
-            i = Favorite_video(user_id ,video_id)
+            i = H_Favorite_video(user_id ,video_id)
             db.session.add(i)
             db.session.commit()
             return "success"
         else:
-            db.session.query(Favorite_video).filter(Favorite_video.user_id == user_id,
-                                                   Favorite_video.video_id ==video_id).delete()
+            db.session.query(H_Favorite_video).filter(H_Favorite_video.user_id == user_id,
+                                                   H_Favorite_video.video_id ==video_id).delete()
             db.session.commit()
             return "duplication"
 
@@ -169,24 +164,24 @@ def add_favorite_video():
         return "fail"
 
 #Write
-@app.route('/add_favorite_playlist', methods = ['GET'])
+@mod.route('/add_favorite_playlist', methods = ['GET'])
 def add_favorite_playlist():
     try:
         user_id = request.args.get('user_id')
         playlist_id = request.args.get('video_id')
 
-        playlist = db.session.query(Favorite_playlist).filter(Favorite_playlist.user_id == user_id,
-                                                   Favorite_playlist.playlist_id ==playlist_id)
+        playlist = db.session.query(H_Favorite_playlist).filter(H_Favorite_playlist.user_id == user_id,
+                                                   H_Favorite_playlist.playlist_id ==playlist_id)
         count = playlist.count()
 
         if count == 0:
-            i = Favorite_playlist(user_id, playlist_id)
+            i = H_Favorite_playlist(user_id, playlist_id)
             db.session.add(i)
             db.session.commit()
             return "success"
         else:
-            db.session.query(Favorite_playlist).filter(Favorite_playlist.user_id == user_id,
-                                                   Favorite_playlist.playlist_id ==playlist_id).delete()
+            db.session.query(H_Favorite_playlist).filter(H_Favorite_playlist.user_id == user_id,
+                                                   H_Favorite_playlist.playlist_id ==playlist_id).delete()
             db.session.commit()
             return "duplication"
 
@@ -195,11 +190,11 @@ def add_favorite_playlist():
 
 
 #Send
-@app.route('/get_favorite_videolist', methods = ['GET'])
+@mod.route('/get_favorite_videolist', methods = ['GET'])
 def send_favorite_video():
     user_id = request.args.get('user_id')
     try:
-        favorite_video_query = db.session.query(Favorite_video).filter(Favorite_video.user_id==user_id).order_by("id desc")
+        favorite_video_query = db.session.query(H_Favorite_video).filter(H_Favorite_video.user_id==user_id).order_by("id desc")
         list_items =""
         for i in favorite_video_query:
             list_items += i.video_id +","
@@ -211,11 +206,11 @@ def send_favorite_video():
 
 
 #Send
-@app.route('/get_favorite_playlist', methods = ['GET'])
+@mod.route('/get_favorite_playlist', methods = ['GET'])
 def send_favorite_playlist():
     user_id = request.args.get('user_id')
     try:
-        Favorite_playlist_query = db.session.query(Favorite_playlist).filter(Favorite_playlist.user_id==user_id).order_by("id desc")
+        Favorite_playlist_query = db.session.query(H_Favorite_playlist).filter(H_Favorite_playlist.user_id==user_id).order_by("id desc")
         list_items =""
         for i in Favorite_playlist_query:
             list_items += i.playlist_id +","
@@ -227,11 +222,11 @@ def send_favorite_playlist():
 
 
 #Send
-@app.route('/get_homecover', methods = ['GET'])
+@mod.route('/get_homecover', methods = ['GET'])
 def send_home_cover():
 
     try:
-        cover_list = db.session.query(Home_cover).order_by("id desc").first().video_id
+        cover_list = db.session.query(H_Home_cover).order_by("id desc").first().video_id
 
         return jsonify( success = True, cover_list = cover_list)
     except:
@@ -239,13 +234,13 @@ def send_home_cover():
 
 
 #Send
-@app.route('/get_recommend', methods = ['GET'])
+@mod.route('/get_recommend', methods = ['GET'])
 def recommend_video():
     try:
-        cover_query = db.session.query(Recommend_cover).order_by("id desc").first()
+        cover_query = db.session.query(H_Recommend_cover).order_by("id desc").first()
         cover_list = cover_query.video_id
 
-        list_query = db.session.query(Recommend_video).order_by("id desc").first()
+        list_query = db.session.query(H_Recommend_video).order_by("id desc").first()
         video_list = list_query.playlist_id
 
         return jsonify( success = True, cover_list=cover_list, video_list = video_list)
@@ -253,20 +248,20 @@ def recommend_video():
         return jsonify( success = False, cover_list="", video_list = "")
 
 
-@app.route('/set_data', methods = ['GET'])
+@mod.route('/set_data', methods = ['GET'])
 def set_video():
     try:
         video_type = str(request.args.get('video_type'))
         id = str(request.args.get('id'))
 
         if video_type == "home":
-            video = Home_cover(id)
+            video = H_Home_cover(id)
 
         elif video_type == "recommend_cover":
-            video = Recommend_cover(str(id))
+            video = H_Recommend_cover(str(id))
 
         else:
-            video = Recommend_video(str(id))
+            video = H_Recommend_video(str(id))
 
         db.session.add(video)
         db.session.commit()
@@ -276,31 +271,7 @@ def set_video():
     except:
         return "false"
 
-
-
-@app.route('/get_ad', methods=['GET'])
-def get_ad():
-    url = 'https://api.buzzad.io/api/v1/list?unit_id=189665253897479'
-
-    data = json.load(urllib2.urlopen(url))
-
-    if data['code'] != 200:
-        return 'error'
-
-    ad_list = data['ads']
-    for ad in ad_list:
-        reward = int(ad['revenue'] * 0.5)
-
-
-        if ad['revenue'] > 150 and ad['revenue_type'] == 'cpi':
-            reward = 100
-
-        print reward
-
-    return jsonify(ad_list[0])
-
-
-@app.route('/upload_homecover', methods=['POST'])
+@mod.route('/upload_homecover', methods=['POST'])
 def upload_homecover():
     try:
         code = int(request.form['code'])
@@ -312,7 +283,7 @@ def upload_homecover():
 
         if code == 378:
             video_str = video1+','+video2+','+video3+','+video4+','+video5
-            video = Home_cover(video_str)
+            video = H_Home_cover(video_str)
             db.session.add(video)
             db.session.commit()
         else:
@@ -323,7 +294,7 @@ def upload_homecover():
     except:
         return "false"
 
-@app.route('/upload_recommendcover', methods=['POST'])
+@mod.route('/upload_recommendcover', methods=['POST'])
 def upload_recommedcover():
     try:
         code = int(request.form['code'])
@@ -335,7 +306,7 @@ def upload_recommedcover():
 
         if code == 378:
             video_str = video1+','+video2+','+video3+','+video4+','+video5
-            video = Recommend_cover(video_str)
+            video = H_Recommend_cover(video_str)
             db.session.add(video)
             db.session.commit()
         else:
