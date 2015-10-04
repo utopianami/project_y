@@ -39,12 +39,12 @@ def get_ddottylog():
         return jsonify(success = False, result = "")
 
 
-@mod.route('/ddottylog')
+@mod.route('/honglog')
 def ddottylog():
-    return render_template('ddottylog.html')
+    return render_template('honglog.html')
 @mod.route('/feature')
 def feature():
-    return render_template('feature.html')
+    return render_template('h_feature.html')
 
 
 @mod.route('/upload', methods=['POST'])
@@ -272,7 +272,7 @@ def set_video():
         return "false"
 
 @mod.route('/upload_homecover', methods=['POST'])
-def upload_homecover():
+def h_upload_homecover():
     try:
         code = int(request.form['code'])
         video1 = request.form['video1'].split('v=')[1]
@@ -295,7 +295,7 @@ def upload_homecover():
         return "false"
 
 @mod.route('/upload_recommendcover', methods=['POST'])
-def upload_recommedcover():
+def h_upload_recommedcover():
     try:
         code = int(request.form['code'])
         video1 = request.form['video1'].split('v=')[1]
