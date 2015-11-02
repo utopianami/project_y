@@ -30,7 +30,7 @@ def hello_world():
         count = db.session.query(User).count()
         return jsonify( success = True, member = count)
     except:
-        return jsonify( success = False, member = 0)
+        return jsonify( success = False, member = 0, db = 0)
 
 
 
