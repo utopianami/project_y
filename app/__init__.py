@@ -78,7 +78,7 @@ def sign_up():
         googleId = request.args.get('google_id')
         count = db.session.query(User).filter(User.googleId ==googleId).count()
         if count == 0:
-            user = User(user_name, googleId)
+            user = User(user_name, googleId, creade_time)
             db.session.add(user)
             db.session.commit()
 

@@ -23,11 +23,14 @@ class User(db.Model):
     googleId = Column(String(255))
     name = Column(String(255))
     img = Column(String(255))
+    time = Column('lastlogindate', TIMESTAMP,
+       server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
-    def __init__(self, name, googleId):
+    def __init__(self, name, googleId,time):
         self.name = name;
         self.googleId = googleId;
         self.img =""
+        self.created_time = time;
 
 
 class Favorite_video(db.Model):
@@ -164,10 +167,3 @@ class H_Home_cover(db.Model):
 
     def __init__(self, video_id):
         self.video_id = video_id
-
-
-
-
-
-
-
