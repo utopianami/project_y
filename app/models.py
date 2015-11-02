@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, TIMESTAMP, text
 
 from app import db
 
-from sqlalchemy import Integer, String, Text, Binary, Column
+from sqlalchemy import Integer, String, DateTime, Text, Binary, Column
 
 class DDotty(db.Model):
     __tablename__ = 'ddotty_log'
@@ -23,15 +23,16 @@ class User(db.Model):
     googleId = Column(String(255))
     name = Column(String(255))
     img = Column(String(255))
-    time = Column('lastlogindate', TIMESTAMP,
-       server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-
-    def __init__(self, name, googleId,time):
-        self.name = name;
-        self.googleId = googleId;
+    lastlogindate = Column(DateTime)
+    createdtime = Column(DateTime)
+    deviceid = Column(String(200))
+    def __init__(self, name, googleId,lastlogindate, createdtime, deviceid):
+        self.name = name
+        self.googleId = googleId
         self.img =""
-        self.created_time = time;
-
+	self.lastlogindate = lastlogindate
+	self.createdtime = createdtime
+	self.deviceid = deviceid
 
 class Favorite_video(db.Model):
     __tablename__ = 'favorite_video'

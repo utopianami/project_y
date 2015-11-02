@@ -3,10 +3,12 @@ from flask import jsonify, render_template
 from flask import Flask, request
 from flask import Flask, render_template, jsonify, session
 from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy import update
+
 import urllib2
 import json
 import urllib2
-
+from datetime import date, datetime, timedelta
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -24,11 +26,10 @@ app.register_blueprint(hongbangjangModule)
 
 @app.route('/')
 def hello_world():
-
     try:
-	    print('HELLO')
-        count = db.session.query(User).count()
-        return jsonify( success = True, member = count)
+	now = datetime.now()
+	count = db.session.query(User).count()
+        return jsonify( success = True, member = count, now = now)
     except:
         return jsonify( success = False, member = 0, db = 0)
 
@@ -77,17 +78,35 @@ def sign_up():
     try:
         user_name = request.args.get('user_name')
         googleId = request.args.get('google_id')
-        count = db.session.query(User).filter(User.googleId ==googleId).count()
+	now = datetime.now()
+	count = db.session.query(User).filter(User.googleId ==googleId).count()
         if count == 0:
-            user = User(user_name, googleId, creade_time)
+            user = User(user_name, googleId, now, now)
             db.session.add(user)
             db.session.commit()
 
         user = db.session.query(User).filter(User.googleId == googleId).first()
-
-        return jsonify( success = True, user_id=user.id, user_name = user.name, user_googleId= user.googleId)
+        user.lastlogindate = now
+	db.session.commit()
+	return jsonify( success = True, user_id=user.id, user_name = user.name, user_googleId= user.googleId)
     except:
         return jsonify( success = False, user_id=0)
+
+
+@app.route('/update_deviceid', methods = ['GET'])
+def update_deviceid():
+    try:
+        device_id = request.args.get('device_id')
+        googleId = request.args.get('google_id')
+
+        user = db.session.query(User).filter(User.googleId == googleId).first()
+        user.deviceid = device_id
+        db.session.commit()
+        return jsonify( success = True, user_id=user.id, device_id = device_id)
+    except:
+        return jsonify( success = False, user_id=0)
+
+
 
 @app.route('/user_update', methods = ['GET'])
 def user_update():

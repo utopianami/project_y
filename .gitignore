@@ -1,6 +1,6 @@
 logs
 logs/*
-*pyc
+*.pyc
 venv
 mypid.pid
 start.sh
