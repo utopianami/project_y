@@ -26,7 +26,7 @@ app.register_blueprint(hongbangjangModule)
 def hello_world():
 
     try:
-	print('HELLO');
+	    print('HELLO');
         count = db.session.query(User).count()
         return jsonify( success = True, member = count)
     except:
